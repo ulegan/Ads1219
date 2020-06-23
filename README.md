@@ -1,0 +1,2 @@
+# Ads1219
+24bit ADC wit ADS1219
