@@ -12,7 +12,7 @@ and also one for [micropython](https://github.com/miketeachman/micropython-ads12
 Both libraries use the I²C-address 0x40 by default, so you have to connect the ADDR-Pin to GND, or use 0x41 in the constructor.
 
 ### Boards ordered from [OSHPARK](https://oshpark.com/)
-![kicad rendering](/doc/kicad_s.png) ![preview](/doc/board_osh.png "OSHPARK preview") ![bottom](/doc/populated_board.jpg "populated board")
+![kicad rendering](/doc/kicad_s.png) ![preview](/doc/board_osh.png "OSHPARK preview") ![first board](/doc/populated_board.jpg "populated board")
 
 ### Diagramm 
 [![Diagramm](/doc/diagramm.png)](/doc/Diagramm.pdf)
