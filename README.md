@@ -3,7 +3,7 @@ A breakout board for the [ADS1219](https://www.ti.com/product/ADS1219) 24-bit AD
 Size and pinout is the same as the popular ADS1x15 boards.
 - Up to 1000Hz samplingrate
 - Single or continuous conversion
-- Single and or differential inputs
+- Single ended or differential inputs
 
 pcb made with [KiCad](https://kicad-pcb.org/)
 
@@ -23,12 +23,12 @@ A1 is always connected to GND, A1 has a pullup to VCC.<br />
 So the I²C-ADDRESS defaults to 0x41. <br />
 Four different addresses can be selected by connecting A0:
 
-| A0 connected to | Address |
-| :-------------- |:-------:|
-| GND             | 0x40    |
-| VCC or open     | 0x41    |
-| SDA             | 0x42    |
-| SCL             | 0x43    |
+| ADDR connected to | Address |
+| :---------------- |:-------:|
+| GND               | 0x40    |
+| VCC or open       | 0x41    |
+| SDA               | 0x42    |
+| SCL               | 0x43    |
 
 ```c++
 
