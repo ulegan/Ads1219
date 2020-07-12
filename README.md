@@ -19,7 +19,7 @@ Both libraries use the I²C-address 0x40 by default, so you have to connect the 
 
 #### I²C-Addressing
 The ADS1219 has two address-pins A0 and A1. <br />
-A1 is always connected to GND, A1 has a pullup to VCC.<br />
+A1 is always connected to GND, A0 has a pullup to VCC.<br />
 So the I²C-ADDRESS defaults to 0x41. <br />
 Four different addresses can be selected by connecting A0:
 
