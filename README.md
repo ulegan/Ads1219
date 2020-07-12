@@ -1,9 +1,10 @@
 # Ads1219
 24bit ADC with ADS1219
+
 made with KiCad
 
 ### Boards ordered from OSHPARK
-![kicad rendering](/doc/ads1219_s.png) ![top](/doc/boardTop.png "Top view") ![bottom](/doc/boardBottom.png "Bottom view") ![bottom](/doc/populated_board.jpg "populated board")
+![kicad rendering](/doc/kicad_s.png) ![preview](/doc/board_osh.png "OSHPARK preview") ![bottom](/doc/populated_board.jpg "populated board")
 
 #### I²C-Addressing
 The ADS1219 has two address-pins A0 and A1. 
@@ -17,3 +18,7 @@ Four different addresses can be selected by connecting A0:
 | VCC or open     | 0x41    |
 | SDA             | 0x42    |
 | SCL             | 0x43    |
+
+```c++
+
+```
