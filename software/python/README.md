@@ -1,3 +1,8 @@
+### Prequisites
+Install smbus2.py, because ADS1219 uses repeated start conditions, that are not supported with smbus
+
+    pip3 install smbus2
+
 ### Constructor
 **ADS1219( port=1, address=0x40, rdyPin=0 )** constructor<br />
 * **port** is the I2C-port defaults to I2C1 on Pin3 (SDA) and Pin5 (SCL) on Raspberry Pi's
@@ -6,7 +11,7 @@
 
 ### Functions
 **config( mux=MUX_DIF_01, gain=GAIN_1, datarate=DR_20, mode=MODE_SINGLESHOT, ref=VREF_INTERNAL )**
-configures the ADS1219 operating mode. Use with the constants above<br />
+configures the ADS1219 operating mode. Use with the constants below<br />
 **reset( )** resets ADS1219<br />
 **start( )** starts a single conversion, or starts continuous conversions<br />
 **powerdown( )** starts powerdown-mode, also stops conversions in continuous-mode<br />
@@ -16,7 +21,7 @@ configures the ADS1219 operating mode. Use with the constants above<br />
 *(uses **rdyPin** if given in constructor, or reads the status register)*<br />
 **result( )** reads conversion result<br />
 **callback( callbackFunction )** sets a callback function that is called, when a new conversion result is ready
-*(only available if a **rdyPin** is given   in the constructor)*
+*(only available if a **rdyPin** is given in the constructor)*
 
 ### Constants to use in config()
 #### Constants for the input multiplexer
@@ -43,7 +48,7 @@ configures the ADS1219 operating mode. Use with the constants above<br />
 * **VREF_INTERNAL** selects the internal 2.048V reference
 * **VREF_EXTERNAL** selects an external reference 
 ### Examples
-#### Simple example: read channel 0 in singleshot-mode
+#### Read channel 0 in singleshot-mode
 ```python
 from ADS1219 import ADS1219
 
@@ -55,17 +60,34 @@ ads.start()
 ads.waitForResult()
 print(ads.result())
 ```
-
-#### Simple example: read channel 0 in singleshot-mode
+#### Read 100 sample betweeen inputs 0 and 1 in continuous-mode
 ```python
 from ADS1219 import ADS1219
 
 ads=ADS1219()
 
 ads.reset()
-ads.config(ads.MUX_SNG_0, ads.GAIN_1, ads.DR_20, ads.MODE_SINGLESHOT, ads.VREF_EXTERNAL)
+ads.config(ads.MUX_DIF_01, ads.GAIN_1, ads.DR_20, ads.MODE_CONTINUOUS, ads.VREF_EXTERNAL)
 ads.start()
-ads.waitForResult()
-print(ads.result())
+for i in range(100):
+	ads.waitForResult()
+	print(ads.result())
+```
+#### Read for 5 seconds, using RDY-pin and callback
+```python
+from ADS1219 import ADS1219
+from time import sleep
+
+ads=ADS1219( rdyPin=4 )
+
+def doSomething():
+	v = ads.result()
+	print( v )
+
+ads.reset()
+ads.config(ads.MUX_DIF_01, ads.GAIN_1, ads.DR_20, ads.MODE_CONTINUOUS, ads.VREF_EXTERNAL)
+ads.callback( doSomething )
+ads.start()
+sleep(5)
 ```
 
