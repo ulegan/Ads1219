@@ -60,7 +60,7 @@ ads.start()
 ads.waitForResult()
 print(ads.result())
 ```
-#### Read 100 sample betweeen inputs 0 and 1 in continuous-mode
+#### Read 100 samples betweeen inputs 0 and 1 in continuous-mode
 ```python
 from ADS1219 import ADS1219
 
