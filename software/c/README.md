@@ -1,8 +1,8 @@
 ### Prequisites
 Install i2c-dev library for C
-    
 	apt-get install libi2c-dev
-### Functions
+### Restrictions
+Usage of RDY-pin is not supported yet### Functions
 **ads_config( mux, gain, datarate, mode, ref )**
 configures the ADS1219 operating mode. Use with the constants below<br />
 **ads_reset( )** resets ADS1219<br />
