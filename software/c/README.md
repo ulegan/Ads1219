@@ -1,6 +1,7 @@
 ### Prequisites
 Install i2c-dev library for C
 	apt-get install libi2c-dev
+	
 ### Restrictions
 Usage of RDY-pin is not supported yet### Functions
 **ads_config( mux, gain, datarate, mode, ref )**
