@@ -5,7 +5,7 @@ Size and pinout is the same as the popular ADS1x15 boards.
 - Single or continuous conversion
 - Single ended or differential inputs
 
-pcb made with [KiCad](https://kicad-pcb.org/)
+pcb made with [KiCad](https://kicad.org/)
 
 ### Boards ordered from [OSHPARK](https://oshpark.com/)
 ![kicad rendering](/doc/kicad_s.png "KiCad rendering") ![preview](/doc/board_osh.png "OSHPARK preview") ![first board](/doc/populated_board.jpg "populated board")
